@@ -1,0 +1,21 @@
+{
+  "name": "atv1_variavel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "index": "ts-node ./src/index",
+    "um": "ts-node ./src/ex01.ts",
+    "dois": "ts-node ./src/ex02.ts",
+    "tres": "ts-node ./src/ex03.ts",
+    "quatro": "ts-node ./src/ex04.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
