@@ -1,0 +1,25 @@
+{
+  "name": "atv4_vetores",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "um": "ts-node ./src/ex01.ts",
+    "dois": "ts-node ./src/ex02.ts",
+    "tres": "ts-node ./src/ex03.ts",
+    "quatro": "ts-node ./src/ex04.ts",
+    "cinco": "ts-node ./src/ex05.ts",
+    "seis": "ts-node ./src/ex06.ts",
+    "sete": "ts-node ./src/ex07.ts",
+    "oito": "ts-node ./src/ex08.ts",
+    "nove": "ts-node ./src/ex09.ts",
+    "dez": "ts-node ./src/ex10.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
