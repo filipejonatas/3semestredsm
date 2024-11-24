@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { createItem, getItems, updateItem, deleteItem } from '../controllers/shoppingController'
+import { createItem, getItems, updateItem, deleteItem, getTotalExpenses } from '../controllers/shoppingController'
 
 const router = Router();
 
@@ -18,5 +18,7 @@ router.put('/item/:id', async (req: Request, res: Response) => {
 router.delete('/item/:id', async (req: Request, res: Response) => {
     await deleteItem(req, res);
 });
+
+router.get('/total', getTotalExpenses);
 
 export default router;

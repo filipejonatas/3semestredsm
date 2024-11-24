@@ -5,8 +5,8 @@ import Expense from '../models/totalExpense';
 // Criar item
 export const createItem = async (req: Request, res: Response): Promise<Response> => {
   try {
-    const { name, quantity } = req.body;
-    const newItem = new ShoppingItem({ name, quantity });
+    const { name, quantity, date } = req.body;
+    const newItem = new ShoppingItem({ name, quantity, date: date || Date.now });
     await newItem.save();
     return res.status(201).json(newItem);
   } catch (error) {
@@ -30,7 +30,12 @@ export const getItems = async (req: Request, res: Response): Promise<Response> =
 export const updateItem = async (req: Request, res: Response): Promise<Response> => {
   try {
     const { id } = req.params;
-    const updatedItem = await ShoppingItem.findByIdAndUpdate(id, req.body, { new: true });
+    const { name, quantity, bought, date } = req.body; // Inclui a data no corpo da requisição
+    const updatedItem = await ShoppingItem.findByIdAndUpdate(
+      id, 
+      { name, quantity, bought, date }, // Atualiza o campo de data se fornecido
+      { new: true }
+    );
     if (!updatedItem) return res.status(404).json({ message: 'Item não encontrado' });
     return res.json(updatedItem);
   } catch (error) {
@@ -62,5 +67,10 @@ export const getTotalExpenses = async (req: Request, res: Response) => {
         }
       }
     ]);
+    const totalAmount = total.length > 0 ? total[0].totalAmount : 0;
+    res.json({ totalAmount });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao calcular as despesas' })
   }
-}
+};
+
