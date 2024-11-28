@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animais Cadastrados</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Lista de Animais</h1>
+  </header>
+  <main>
+    <ul>
+      <% if (animais.length > 0) { %>
+        <% animais.forEach(animal => { %>
+          <li>
+            <strong>Nome:</strong> <%= animal.nome %> <br>
+            <strong>Espécie:</strong> <%= animal.especie %> <br>
+            <strong>Idade:</strong> <%= animal.idade %> <br>
+            <strong>Tutor:</strong> <%= animal.tutor %> <br>
+            <strong>Contato:</strong> <%= animal.contato %> <br>
+          </li>
+        <% }); %>
+      <% } else { %>
+        <p>Nenhum animal cadastrado.</p>
+      <% } %>
+    </ul>
+    <a href="/">Voltar ao Cadastro</a>
+  </main>
+</body>
+</html>
